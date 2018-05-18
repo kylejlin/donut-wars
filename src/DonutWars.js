@@ -188,20 +188,20 @@ class DonutWars extends Component {
         // Alternative to pixel perfect: line segments
         const lineSegments = ([
           [
-            [14, 111],
-            [52, 41]
+            [14/2, 111/2],
+            [52/2, 41/2]
           ],
           [
-            [-48, 41],
-            [-3, 113]
+            [-48/2, 41/2],
+            [-3/2, 113/2]
           ],
           [
-            [-2, 113],
-            [-2, 193]
+            [-2/2, 113/2],
+            [-2/2, 193/2]
           ],
           [
-            [16, 109],
-            [16, 193]
+            [16/2, 109/2],
+            [16/2, 193/2]
           ]
         ]).map((lineSegment) => lineSegment.map(([eX, eY]) => {
           return [(eX * ccos) - (eY * csin), (eY * ccos) + (eX * csin)];
@@ -256,20 +256,20 @@ class DonutWars extends Component {
     const y = this.state.player.y;
     let lineSegments = ([
       [
-        [14, 111],
-        [52, 41]
+        [14/2, 111/2],
+        [52/2, 41/2]
       ],
       [
-        [-48, 41],
-        [-3, 113]
+        [-48/2, 41/2],
+        [-3/2, 113/2]
       ],
       [
-        [-2, 113],
-        [-2, 193]
+        [-2/2, 113/2],
+        [-2/2, 193/2]
       ],
       [
-        [16, 109],
-        [16, 193]
+        [16/2, 109/2],
+        [16/2, 193/2]
       ]
     ]).map((lineSegment) => lineSegment.map(([eX, eY]) => {
       return [(eX * ccos) - (eY * csin), (eY * ccos) + (eX * csin)];
