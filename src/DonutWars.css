@@ -1,0 +1,7 @@
+.DonutWars {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/stone-texture.jpeg");
+  background-repeat: repeat;
+  background-size: 100px 100px;
+}
