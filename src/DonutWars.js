@@ -70,13 +70,6 @@ class DonutWars extends Component {
             return <Wall renderX={x} renderY={y} />
           })
         }
-
-        {
-          this.DEBUG_getNet().concat([[0, 0]]).map(([aX, aY]) => {
-            const {x, y} = this.calculateRenderCoordinates({ x: aX, y: aY });
-            return <DebugSquare color="red" renderX={x} renderY={y} />
-          })
-        }
       </div>
     );
   }
@@ -246,44 +239,6 @@ class DonutWars extends Component {
         return false;
       }
     });
-  }
-
-  DEBUG_getNet() {
-    const directionInRadians = this.state.player.direction * Math.PI / 180;
-    const ccos = Math.cos((2 * Math.PI) - directionInRadians);
-    const csin = Math.sin((2 * Math.PI) - directionInRadians);
-    const x = this.state.player.x;
-    const y = this.state.player.y;
-    let lineSegments = ([
-      [
-        [14/2, 111/2],
-        [52/2, 41/2]
-      ],
-      [
-        [-48/2, 41/2],
-        [-3/2, 113/2]
-      ],
-      [
-        [-2/2, 113/2],
-        [-2/2, 193/2]
-      ],
-      [
-        [16/2, 109/2],
-        [16/2, 193/2]
-      ]
-    ]).map((lineSegment) => lineSegment.map(([eX, eY]) => {
-      return [(eX * ccos) - (eY * csin), (eY * ccos) + (eX * csin)];
-    }).map(([eX, eY]) => {
-      return [x + eX, y + eY];
-    }));
-
-    const arr = [];
-
-    for (let segment of lineSegments) {
-      arr.push(segment[0], segment[1]);
-    }
-
-    return arr;
   }
 }
 
